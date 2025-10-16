@@ -1,0 +1,81 @@
+[build-system]
+requires = [
+    "setuptools>=80",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Orange3 Example Add-on"
+version = "0.0.4"
+dependencies = [
+    "Orange3",
+]
+requires-python = ">=3.10"
+
+authors = [
+    {name="Bioinformatics Laboratory, FRI UL", email="contact@orange.biolab.si"},
+]
+maintainers = [
+    {name="Bioinformatics Laboratory, FRI UL", email="contact@orange.biolab.si"},
+]
+description = 'Add-on containing example widgets'
+readme = {file = "README.pypi", content-type = "text/markdown"}
+license = "BSD"
+license-files = ["LICEN[CS]E.*"]
+keywords = [
+    # [PyPi](https://pypi.python.org) packages with keyword "orange3 add-on"
+    # can be installed using the Orange Add-on Manager
+    "orange3 add-on",
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python",
+    "Development Status :: 3 - Alpha",
+]
+
+[project.optional-dependencies]
+doc = [
+    "sphinx",
+    "recommonmark",
+    "sphinx_rtd_theme",
+]
+test = [
+    "coverage",
+]
+dev = [
+    "pre-commit",
+    "ruff",
+]
+
+[project.urls]
+Homepage = "https://orangedatamining.com/"
+Documentation = "http://orange3-example-addon.readthedocs.org/"
+Repository = "https://github.com/biolab/orange3-example-addon"
+Issues = "https://github.com/biolab/orange3-example-addon/issues"
+
+# Entry point that marks this package as an orange add-on. If set, addon will
+# be shown in the add-ons manager even if not published on PyPi.
+[project.entry-points."orange3.addon"]
+example = "orangecontrib.example"
+
+# Entry point used to specify packages containing tutorials accessible
+# from welcome screen. Tutorials are saved Orange Workflows (.ows files).
+[project.entry-points."orange.widgets.tutorials"]
+"exampletutorials" = "orangecontrib.example.tutorials"
+
+# Entry point used to specify packages containing widgets.
+[project.entry-points."orange.widgets"]
+# Syntax: category name = path.to.package.containing.widgets
+# Widget category specification can be seen in
+#    orangecontrib/example/widgets/__init__.py
+"Examples" = "orangecontrib.example.widgets"
+
+# Entry point used to register widget help
+[project.entry-points."orange.canvas.help"]
+html-index = "orangecontrib.example.widgets:WIDGET_HELP_PATH"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B", "UP"]
+
+[tool.ruff.format]
+quote-style = "preserve"
