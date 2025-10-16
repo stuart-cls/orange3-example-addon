@@ -52,7 +52,7 @@ dev = [
 
 [project.urls]
 Homepage = "https://orangedatamining.com/"
-Documentation = "http://orange3-example-addon.readthedocs.org/"
+Documentation = "https://orange3-example-addon.readthedocs.org/"
 Repository = "https://github.com/biolab/orange3-example-addon"
 Issues = "https://github.com/biolab/orange3-example-addon/issues"
 
