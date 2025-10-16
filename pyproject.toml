@@ -1,12 +1,15 @@
 [build-system]
 requires = [
     "setuptools>=80",
+    "setuptools-scm>=8",
 ]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "Orange3 Example Add-on"
-version = "0.0.4"
+# Git tags such as "v1.0.0" will be used automatically.
+# See [Recommended Tag Format](https://setuptools-scm.readthedocs.io/en/latest/usage/#recommended-tag-format)
+dynamic = ["version"]
 dependencies = [
     "Orange3",
 ]
