@@ -1,7 +1,7 @@
 Orange3 Example Add-on
 ======================
 
-This is an example add-on for [Orange3](http://orange.biolab.si). Add-on can extend Orange either 
+This is an example add-on for [Orange3](http://orange.biolab.si). Add-on can extend Orange either
 in scripting or GUI part, or in both. We here focus on the GUI part and implement a simple (empty) widget,
 register it with Orange and add a new workflow with this widget to example tutorials.
 
@@ -12,7 +12,7 @@ To install the add-on from source run
 
     pip install .
 
-To register this add-on with Orange, but keep the code in the development directory (do not copy it to 
+To register this add-on with Orange, but keep the code in the development directory (do not copy it to
 Python's site-packages directory), run
 
     pip install -e .
@@ -38,3 +38,20 @@ or
 The new widget appears in the toolbox bar under the section Example.
 
 ![screenshot](https://github.com/biolab/orange3-example-addon/blob/master/screenshot.png)
+
+Development
+-----------
+
+To install with development tools run
+
+    pip install .[doc,test,dev]
+
+To register this add-on with Orange, but keep the code in the development
+directory (do not copy it to Python's site-packages directory), run
+
+    pip install -e .[doc,test,dev]
+
+The repository has [pre-commit](https://pre-commit.com/) hooks configured, you
+can set them up with
+
+    pre-commit install
